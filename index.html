@@ -17,58 +17,117 @@
   </head>
   <body>
     <main>
-      <h1>Calcul de pente</h1>
-      <div class="with-sidebar">
-        <div>
-          <form id="form">
-            <div class="inputs">
-              <label for="altitude-A">Altitude du point A</label>
-              <input
-                required
-                id="altitude-A"
-                name="altitude-A"
-                inputmode="numeric"
-                type="text"
-              />
-              <label for="altitude-B">Altitude du point B</label>
-              <input
-                required
-                id="altitude-B"
-                name="altitude-B"
-                inputmode="numeric"
-              />
-              <label for="distance-CB">Distance CB</label>
-              <input
-                required
-                id="distance-CB"
-                name="distance-CB"
-                inputmode="numeric"
-              />
-            </div>
-            <button type="submit">Valider</button>
-          </form>
-          <section class="triangle">
-            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
-              <polygon
-                points="15,10 15,90 185,90"
-                fill="none"
-                stroke="currentColor"
-              />
-              <text x="0" y="10">A</text>
-              <text x="0" y="95">C</text>
-              <text x="190" y="95">B</text>
-              <text id="slope" x="45" y="65" />
-              <text
-                id="distance-AB"
-                x="80"
-                y="50"
-                transform="rotate(25.5, 115, 20)"
-              />
-            </svg>
-            <input id="slide-CB" type="range" />
-          </section>
+      <article>
+        <h2>Calcul de pente</h2>
+        <div class="with-sidebar">
+          <div>
+            <form id="form">
+              <div class="inputs">
+                <label for="altitude-A">Altitude du point A</label>
+                <input
+                  required
+                  id="altitude-A"
+                  name="altitude-A"
+                  inputmode="numeric"
+                  type="text"
+                />
+                <label for="altitude-B">Altitude du point B</label>
+                <input
+                  required
+                  id="altitude-B"
+                  name="altitude-B"
+                  inputmode="numeric"
+                />
+                <label for="distance-CB">Distance CB</label>
+                <input
+                  required
+                  id="distance-CB"
+                  name="distance-CB"
+                  inputmode="numeric"
+                />
+              </div>
+              <button type="submit">Valider</button>
+            </form>
+            <section class="triangle">
+              <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon
+                  points="15,10 15,90 185,90"
+                  fill="none"
+                  stroke="currentColor"
+                />
+                <text x="0" y="10">A</text>
+                <text x="0" y="95">C</text>
+                <text x="190" y="95">B</text>
+                <text id="slope" x="45" y="65" />
+                <text
+                  id="distance-AB"
+                  x="80"
+                  y="50"
+                  transform="rotate(25.5, 115, 20)"
+                />
+              </svg>
+              <input id="slide-CB" type="range" />
+            </section>
+          </div>
         </div>
-      </div>
+      </article>
+      <article>
+        <h2>Calcul d'altimétrie</h2>
+        <div class="with-sidebar">
+          <div>
+            <form id="alti_form">
+              <div class="inputs">
+                <label for="alti_altitude-A">Altitude du point A</label>
+                <input
+                  required
+                  id="alti_altitude-A"
+                  name="alti_altitude-A"
+                  inputmode="numeric"
+                  type="text"
+                />
+                <label for="alti_altitude-B">Altitude du point B</label>
+                <input
+                  required
+                  id="alti_altitude-B"
+                  name="alti_altitude-B"
+                  inputmode="numeric"
+                />
+                <label for="alti_distance-CB">Distance CB</label>
+                <input
+                  required
+                  id="alti_distance-CB"
+                  name="alti_distance-CB"
+                  inputmode="numeric"
+                />
+                <label for="alti_distance-CD">Distance CD</label>
+                <input
+                  required
+                  id="alti_distance-CD"
+                  name="alti_distance-CD"
+                  inputmode="numeric"
+                />
+              </div>
+              <button type="submit">Valider</button>
+            </form>
+            <section class="triangle">
+              <svg viewBox="0 0 200 105" xmlns="http://www.w3.org/2000/svg">
+                <polygon
+                  points="15,10 15,90 185,90"
+                  fill="none"
+                  stroke="currentColor"
+                />
+                <text x="0" y="10">A</text>
+                <text x="0" y="95">C</text>
+                <text x="65" y="27">E</text>
+                <text id="altitude-E" x="80" y="27" />
+                <text x="60" y="105">D</text>
+                <text x="190" y="95">B</text>
+                <polyline points="65,33 65,90" stroke="currentColor" />
+              </svg>
+            </section>
+          </div>
+        </div>
+      </article>
     </main>
     <script async src="/app.js"></script>
   </body>

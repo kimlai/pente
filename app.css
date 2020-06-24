@@ -10,11 +10,16 @@ main {
 }
 
 main > * + * {
+  margin-top: 4rem;
+}
+
+article > * + * {
   margin-top: 2rem;
 }
 
-h1 {
+h2 {
   font-family: "Inter";
+  font-size: 2rem;
 }
 
 .with-sidebar {

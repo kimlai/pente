@@ -27,3 +27,18 @@ document.getElementById("form").addEventListener("submit", e => {
   slider.setAttribute("max", CB + 30);
   slider.value = CB;
 });
+
+document.getElementById("alti_form").addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const altitudeA = parseInt(data.get("alti_altitude-A"), 10);
+  const altitudeB = parseInt(data.get("alti_altitude-B"), 10);
+  const CB = parseInt(data.get("alti_distance-CB"), 10);
+  const CD = parseInt(data.get("alti_distance-CD"), 10);
+  const DB = CB - CD;
+  const AC = altitudeA - altitudeB;
+
+  const altitudeE = (altitudeB + (AC * DB) / CB).toFixed(2);
+
+  document.getElementById("altitude-E").innerHTML = altitudeE + "m";
+});
