@@ -88,3 +88,11 @@ svg {
 svg text {
   fill: currentColor;
 }
+
+#slide-CB {
+  display: none;
+  width: 100%;
+}
+#slide-CB.show {
+  display: block;
+}
