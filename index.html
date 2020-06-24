@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Calcul de pente</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-css-reset/dist/reset.min.css"
+    />
+    <link rel="stylesheet" href="/app.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <h1>Calcul de pente</h1>
+      <div class="with-sidebar">
+        <div>
+          <form id="form">
+            <div class="inputs">
+              <label for="altitude-A">Altitude du point A</label>
+              <input
+                required
+                id="altitude-A"
+                name="altitude-A"
+                inputmode="numeric"
+              />
+              <label for="altitude-B">Altitude du point B</label>
+              <input
+                required
+                id="altitude-B"
+                name="altitude-B"
+                inputmode="numeric"
+              />
+              <label for="distance-CB">Distance CB</label>
+              <input
+                required
+                id="distance-CB"
+                name="distance-CB"
+                inputmode="numeric"
+              />
+            </div>
+            <button type="submit">Valider</button>
+          </form>
+          <section class="triangle">
+            <svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+              <polygon
+                points="15,10 15,90 185,90"
+                fill="none"
+                stroke="currentColor"
+              />
+              <text x="0" y="10">A</text>
+              <text x="0" y="95">C</text>
+              <text x="190" y="95">B</text>
+              <text id="slope" x="45" y="65" />
+              <text
+                id="distance-AB"
+                x="80"
+                y="50"
+                transform="rotate(25.5, 115, 20)"
+              />
+            </svg>
+          </section>
+        </div>
+      </div>
+    </main>
+    <script async src="/app.js"></script>
+  </body>
+</html>

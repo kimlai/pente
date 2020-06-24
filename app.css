@@ -1,0 +1,84 @@
+:root {
+  font-family: Helvetica, sans-serif;
+}
+
+main {
+  max-width: 80ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1rem;
+}
+
+main > * + * {
+  margin-top: 2rem;
+}
+
+h1 {
+  font-family: "Inter";
+}
+
+.with-sidebar {
+  overflow: hidden;
+}
+
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.with-sidebar > * > * {
+  flex-grow: 1;
+}
+
+.with-sidebar > * > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - 1rem);
+}
+
+form {
+  border: 3px solid;
+  padding: 2rem;
+}
+
+form > * + * {
+  margin-top: 2rem;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: auto 6ch;
+  grid-gap: 1rem;
+  justify-content: start;
+  align-items: center;
+}
+
+label {
+  text-align: right;
+}
+
+button {
+  font-family: "Inter";
+  border: none;
+  background: black;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+}
+
+.triangle {
+  display: grid;
+  place-items: center;
+  background: black;
+  color: white;
+  padding: 2rem;
+}
+
+svg {
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+svg text {
+  fill: currentColor;
+}
