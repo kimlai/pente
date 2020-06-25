@@ -25,8 +25,8 @@ document.getElementById("form").addEventListener("submit", e => {
   const CB = toFloat(document.getElementById("distance-CB").value);
   const slider = document.getElementById("slide-CB");
   slider.classList.add("show");
-  slider.setAttribute("min", CB - 10);
-  slider.setAttribute("max", CB + 10);
+  slider.setAttribute("min", Math.max(0.01, CB - 10).toFixed(2));
+  slider.setAttribute("max", (CB + 10).toFixed(2));
   slider.value = CB;
 });
 
