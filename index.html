@@ -35,7 +35,7 @@
             </ul>
           </nav>
         </header>
-        <div>
+        <div style="--min-width: 66%">
           <main class="wrapper">
             <article>
               <h2 id="pente">Calcul de pente <a href="#pente">#</a></h2>
@@ -48,29 +48,38 @@
                   <form id="form">
                     <div class="inputs">
                       <label for="altitude-A">Altitude du point A</label>
-                      <input
-                        required
-                        id="altitude-A"
-                        name="altitude-A"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="altitude-A"
+                          name="altitude-A"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                       <label for="altitude-B">Altitude du point B</label>
-                      <input
-                        required
-                        id="altitude-B"
-                        name="altitude-B"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="altitude-B"
+                          name="altitude-B"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                       <label for="distance-CB">Distance CB</label>
-                      <input
-                        required
-                        id="distance-CB"
-                        name="distance-CB"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="distance-CB"
+                          name="distance-CB"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                     </div>
                     <button type="submit">Valider</button>
                   </form>
@@ -113,37 +122,49 @@
                   <form id="alti_form">
                     <div class="inputs">
                       <label for="alti_altitude-A">Altitude du point A</label>
-                      <input
-                        required
-                        id="alti_altitude-A"
-                        name="alti_altitude-A"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="alti_altitude-A"
+                          name="alti_altitude-A"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                       <label for="alti_altitude-B">Altitude du point B</label>
-                      <input
-                        required
-                        id="alti_altitude-B"
-                        name="alti_altitude-B"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="alti_altitude-B"
+                          name="alti_altitude-B"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                       <label for="alti_distance-CB">Distance CB</label>
-                      <input
-                        required
-                        id="alti_distance-CB"
-                        name="alti_distance-CB"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="alti_distance-CB"
+                          name="alti_distance-CB"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                       <label for="alti_distance-CD">Distance CD</label>
-                      <input
-                        required
-                        id="alti_distance-CD"
-                        name="alti_distance-CD"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="alti_distance-CD"
+                          name="alti_distance-CD"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                     </div>
                     <button type="submit">Valider</button>
                   </form>
@@ -181,21 +202,27 @@
                   <form id="stairs_form">
                     <div class="inputs">
                       <label for="stairs_H">Hauteur H</label>
-                      <input
-                        required
-                        id="stairs_H"
-                        name="stairs_H"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="stairs_H"
+                          name="stairs_H"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                       <label for="stairs_L">Longueur L</label>
-                      <input
-                        required
-                        id="stairs_L"
-                        name="stairs_L"
-                        inputmode="decimal"
-                        type="text"
-                      />
+                      <div class="nowrap">
+                        <input
+                          required
+                          id="stairs_L"
+                          name="stairs_L"
+                          inputmode="decimal"
+                          type="text"
+                        />
+                        <span>m</span>
+                      </div>
                     </div>
                     <button type="submit">Valider</button>
                   </form>
