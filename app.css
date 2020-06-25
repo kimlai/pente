@@ -52,7 +52,7 @@ form > * + * {
 
 .inputs {
   display: grid;
-  grid-template-columns: auto 6ch;
+  grid-template-columns: auto 9ch;
   grid-gap: 1rem;
   justify-content: start;
   align-items: center;

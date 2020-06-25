@@ -1,8 +1,10 @@
+const toFloat = input => parseFloat(input.replace(",", "."));
+
 const computeSlope = () => {
   const data = new FormData(document.getElementById("form"));
-  const altitudeA = parseInt(data.get("altitude-A"), 10);
-  const altitudeB = parseInt(data.get("altitude-B"), 10);
-  const CB = parseInt(data.get("distance-CB"), 10);
+  const altitudeA = toFloat(data.get("altitude-A"));
+  const altitudeB = toFloat(data.get("altitude-B"));
+  const CB = toFloat(data.get("distance-CB"));
   const AC = altitudeA - altitudeB;
 
   const slope = ((100 * AC) / CB).toFixed(2);
@@ -20,21 +22,21 @@ document.getElementById("form").addEventListener("submit", e => {
   e.preventDefault();
   computeSlope();
 
-  const CB = parseInt(document.getElementById("distance-CB").value, 10);
+  const CB = toFloat(document.getElementById("distance-CB").value);
   const slider = document.getElementById("slide-CB");
   slider.classList.add("show");
-  slider.setAttribute("min", CB - 30);
-  slider.setAttribute("max", CB + 30);
+  slider.setAttribute("min", CB - 10);
+  slider.setAttribute("max", CB + 10);
   slider.value = CB;
 });
 
 document.getElementById("alti_form").addEventListener("submit", e => {
   e.preventDefault();
   const data = new FormData(e.target);
-  const altitudeA = parseInt(data.get("alti_altitude-A"), 10);
-  const altitudeB = parseInt(data.get("alti_altitude-B"), 10);
-  const CB = parseInt(data.get("alti_distance-CB"), 10);
-  const CD = parseInt(data.get("alti_distance-CD"), 10);
+  const altitudeA = toFloat(data.get("alti_altitude-A"));
+  const altitudeB = toFloat(data.get("alti_altitude-B"));
+  const CB = toFloat(data.get("alti_distance-CB"));
+  const CD = toFloat(data.get("alti_distance-CD"));
   const DB = CB - CD;
   const AC = altitudeA - altitudeB;
 
