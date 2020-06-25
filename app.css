@@ -1,7 +1,8 @@
 :root {
   font-family: Helvetica, sans-serif;
   --color-extra-light: #ecf6fe;
-  --color-light: #aed9f9;
+  --color-light: #b8ddfa;
+  --color-background: #aed9f9;
   --color-light-shadow: #b6cbdd;
   --color-dark: #1d243f;
   --color-blueprint-pattern: #c3e1f9;
@@ -22,7 +23,7 @@ input:focus {
 }
 
 body {
-  background: var(--color-light);
+  background: var(--color-background);
   /** stolen from https://leaverou.github.io/css3patterns/#blueprint-grid */
   background-image: linear-gradient(
       var(--color-blueprint-pattern) 2px,
@@ -49,14 +50,15 @@ a {
 header {
   padding: 3rem 4rem;
   padding-bottom: 2rem;
-  outline: dotted 4px;
+  outline: dotted 5px;
 }
 
 header a {
   text-decoration: none;
 }
 header a:hover {
-  border-bottom: 3px solid;
+  background: var(--color-extra-light);
+  color: var(--color-dark);
 }
 
 nav ul {
@@ -68,7 +70,12 @@ nav ul {
 }
 
 nav ul > * + * {
-  margin-top: 1rem;
+  margin-top: 2rem;
+}
+nav a {
+  padding: 0.5rem 0.75rem;
+  background: var(--color-dark);
+  color: var(--color-extra-light);
 }
 
 main {
@@ -81,8 +88,9 @@ main > * + * {
 }
 
 footer {
+  background: var(--color-light);
   text-align: center;
-  border-top: 4px dotted;
+  border-top: 5px dotted;
   padding: 1.5rem 1rem;
 }
 
@@ -90,8 +98,22 @@ footer > * + * {
   margin-top: 0.75rem;
 }
 
+/** override the reset */
 article > * + * {
-  margin-top: 2rem;
+  margin-top: 0;
+}
+
+.article--top > * + * {
+  margin-top: 1.25rem;
+}
+
+article {
+  background: var(--color-light);
+  box-shadow: 0.75rem 0.75rem 0 var(--color-dark);
+  border: 3px solid;
+}
+.article--top {
+  padding: 2rem;
 }
 
 .site-title {
@@ -116,7 +138,7 @@ h2 a {
 
 h2 {
   line-height: 1.2;
-  scroll-margin: 2rem;
+  scroll-margin: 4rem;
   font-family: "Inter";
   font-size: 2rem;
 }
@@ -141,14 +163,8 @@ h2 {
   min-width: var(--min-width);
 }
 
-.tool {
-  box-shadow: 0.5rem 0.5rem 0 var(--color-dark);
-}
-
 form {
-  background: var(--color-light);
-  background-image: none;
-  border: 3px solid;
+  border-top: 3px solid;
   padding: 2rem;
 }
 
