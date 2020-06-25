@@ -69,6 +69,10 @@ footer {
   padding: 1.5rem 1rem;
 }
 
+footer > * + * {
+  margin-top: 0.75rem;
+}
+
 article > * + * {
   margin-top: 2rem;
 }
@@ -89,11 +93,6 @@ article > * + * {
   border: 3px solid;
 }
 
-h1 {
-  line-height: 1.1;
-  font-family: "Inter";
-  font-size: 3rem;
-}
 h2 a {
   font-weight: normal;
 }
