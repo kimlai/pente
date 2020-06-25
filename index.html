@@ -133,6 +133,60 @@
           </div>
         </div>
       </article>
+      <article>
+        <h2>Calcul d'escalier</h2>
+        <div class="with-sidebar">
+          <div>
+            <form id="stairs_form">
+              <div class="inputs">
+                <label for="stairs_H">Hauteur H</label>
+                <input
+                  required
+                  id="stairs_H"
+                  name="stairs_H"
+                  inputmode="decimal"
+                  type="text"
+                />
+                <label for="stairs_L">Longueur L</label>
+                <input
+                  required
+                  id="stairs_L"
+                  name="stairs_L"
+                  inputmode="decimal"
+                  type="text"
+                />
+              </div>
+              <button type="submit">Valider</button>
+            </form>
+            <section class="triangle">
+              <svg
+                class="stairs-svg"
+                viewBox="0 0 200 105"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polygon
+                  points="15,10 57,10 57,30 100,30 100,50 142,50 142,70 185,70 185,90 15,90"
+                  fill="none"
+                  stroke="currentColor"
+                />
+                <text x="0" y="55">H</text>
+                <text x="85" y="105">L</text>
+                <text x="62" y="23" id="stairs_h" />
+                <text x="115" y="45" id="stairs_g" />
+                <text x="35" y="70" id="stairs_formula" />
+              </svg>
+              <div id="stairs-result">
+                <div>
+                  <label for="slide-stairs-count">
+                    Nombre de marches : <span id="stairs_count"></span>
+                  </label>
+                </div>
+                <input id="slide-stairs-count" type="range" />
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
     </main>
     <script async src="/app.js"></script>
   </body>

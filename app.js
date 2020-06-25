@@ -44,3 +44,50 @@ document.getElementById("alti_form").addEventListener("submit", e => {
 
   document.getElementById("altitude-E").innerHTML = altitudeE + "m";
 });
+
+const computeStairs = stairsCount => {
+  const data = new FormData(document.getElementById("stairs_form"));
+  const H = toFloat(data.get("stairs_H")) * 100;
+  const L = toFloat(data.get("stairs_L")) * 100;
+
+  const N = stairsCount ? stairsCount : Math.round((2 * H + L) / 63);
+  const h = H / N;
+  const g = L / N;
+  const formula = (2 * h + g).toFixed(2);
+
+  document.getElementById("stairs-result").classList.add("show");
+  document.getElementById("stairs_count").innerHTML = N;
+  document.getElementById("stairs_h").innerHTML = "h = " + h.toFixed(2) + "cm";
+  document.getElementById("stairs_g").innerHTML = "g = " + g.toFixed(2) + "cm";
+  document.getElementById("stairs_formula").innerHTML = "2h + g = " + formula;
+};
+
+document.getElementById("slide-stairs-count").addEventListener("input", e => {
+  const stairsCount = e.target.value;
+  document.getElementById("stairs_count").innerHTML = stairsCount;
+  computeStairs(stairsCount);
+});
+
+document.getElementById("stairs_form").addEventListener("submit", e => {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const H = toFloat(data.get("stairs_H")) * 100;
+  const L = toFloat(data.get("stairs_L")) * 100;
+
+  const N = Math.round((2 * H + L) / 63);
+  const minN = Math.round((2 * H + L) / 66);
+  const maxN = Math.round((2 * H + L) / 60);
+  const h = H / N;
+  const g = L / N;
+  const formula = (2 * h + g).toFixed(2);
+
+  document.getElementById("stairs-result").classList.add("show");
+  document.getElementById("stairs_count").innerHTML = N;
+  document.getElementById("stairs_h").innerHTML = "h = " + h.toFixed(2) + "cm";
+  document.getElementById("stairs_g").innerHTML = "g = " + g.toFixed(2) + "cm";
+  document.getElementById("stairs_formula").innerHTML = "2h + g = " + formula;
+  const slider = document.getElementById("slide-stairs-count");
+  slider.setAttribute("min", minN);
+  slider.setAttribute("max", maxN);
+  slider.value = N;
+});

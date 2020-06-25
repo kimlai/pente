@@ -86,6 +86,10 @@ button {
   padding: 2rem;
 }
 
+.triangle > * + * {
+  margin-top: 1rem;
+}
+
 svg {
   font-size: 0.65rem;
   font-weight: bold;
@@ -100,4 +104,25 @@ svg text {
 }
 #slide-CB.show {
   display: block;
+}
+
+.stairs-svg {
+  font-size: 0.5rem;
+}
+
+#stairs-result {
+  font-weight: bold;
+  width: 100%;
+  display: none;
+}
+
+#stairs-result > * + * {
+  margin-top: 0.75rem;
+}
+
+#stairs-result.show {
+  display: block;
+}
+#slide-stairs-count {
+  width: 100%;
 }
