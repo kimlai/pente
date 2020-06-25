@@ -5,6 +5,7 @@
   --color-light-shadow: #b6cbdd;
   --color-dark: #1d243f;
   --color-blueprint-pattern: #c3e1f9;
+  --color-blueprint-pattern: #daebfb;
 }
 
 :focus {
@@ -30,7 +31,7 @@ body {
     linear-gradient(90deg, var(--color-blueprint-pattern) 2px, transparent 2px),
     linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-size: 125px 125px, 125px 125px, 25px 25px, 25px 25px;
   background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
   color: var(--color-dark);
 }
