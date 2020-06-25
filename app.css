@@ -119,10 +119,14 @@ svg text {
 #stairs-result > * + * {
   margin-top: 0.75rem;
 }
+#stairs-result .input-group > * + * {
+  margin-top: 0.25rem;
+}
 
 #stairs-result.show {
   display: block;
 }
+#slide-stairs-L,
 #slide-stairs-count {
   width: 100%;
 }

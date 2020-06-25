@@ -176,12 +176,20 @@
                 <text x="35" y="70" id="stairs_formula" />
               </svg>
               <div id="stairs-result">
-                <div>
-                  <label for="slide-stairs-count">
-                    Nombre de marches : <span id="stairs_count"></span>
-                  </label>
+                <div class="input-group">
+                  <div>
+                    <label for="slide-stairs-count">
+                      Nombre de marches : <span id="stairs_count"></span>
+                    </label>
+                  </div>
+                  <input id="slide-stairs-count" type="range" />
                 </div>
-                <input id="slide-stairs-count" type="range" />
+                <div class="input-group">
+                  <div>
+                    <label for="stairs_L">Longueur de l'escalier</label>
+                  </div>
+                  <input id="slide-stairs-L" type="range" step="0.01" />
+                </div>
               </div>
             </section>
           </div>
