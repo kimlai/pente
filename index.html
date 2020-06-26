@@ -97,13 +97,14 @@
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <polygon
+                        class="animated-shape"
                         points="15,10 15,90 185,90"
                         fill="none"
                         stroke="currentColor"
                       />
-                      <text x="0" y="10">A</text>
-                      <text x="0" y="95">C</text>
-                      <text x="190" y="95">B</text>
+                      <text class="delayed-text" x="0" y="10">A</text>
+                      <text class="delayed-text" x="0" y="95">C</text>
+                      <text class="delayed-text" x="190" y="95">B</text>
                       <text id="slope" x="45" y="65" />
                       <text
                         id="distance-AB"
@@ -195,14 +196,24 @@
                         points="15,10 15,90 185,90"
                         fill="none"
                         stroke="currentColor"
+                        class="animated-shape"
                       />
-                      <text x="0" y="10">A</text>
-                      <text x="0" y="95">C</text>
-                      <text x="65" y="27">E</text>
-                      <text id="altitude-E" x="80" y="27" />
-                      <text x="60" y="105">D</text>
-                      <text x="190" y="95">B</text>
-                      <polyline points="65,33 65,90" stroke="currentColor" />
+                      <text class="delayed-text" x="0" y="10">A</text>
+                      <text class="delayed-text" x="0" y="95">C</text>
+                      <text class="delayed-text" x="65" y="27">E</text>
+                      <text
+                        class="delayed-text"
+                        id="altitude-E"
+                        x="80"
+                        y="27"
+                      />
+                      <text class="delayed-text" x="60" y="105">D</text>
+                      <text class="delayed-text" x="190" y="95">B</text>
+                      <polyline
+                        points="65,33 65,90"
+                        stroke="currentColor"
+                        class="animated-shape"
+                      />
                     </svg>
                   </section>
                 </div>
@@ -261,9 +272,10 @@
                         points="15,10 57,10 57,30 100,30 100,50 142,50 142,70 185,70 185,90 15,90"
                         fill="none"
                         stroke="currentColor"
+                        class="animated-shape"
                       />
-                      <text x="0" y="55">H</text>
-                      <text x="85" y="105">L</text>
+                      <text class="delayed-text" x="0" y="55">H</text>
+                      <text class="delayed-text" x="85" y="105">L</text>
                       <text x="62" y="23" id="stairs_h" />
                       <text x="115" y="45" id="stairs_g" />
                       <text x="35" y="70" id="stairs_formula" />

@@ -1,3 +1,25 @@
+const animate = element => element.classList.add("animate");
+
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 1.0 }
+  );
+
+  document
+    .querySelectorAll(".triangle")
+    .forEach(element => observer.observe(element));
+} else {
+  document.querySelectorAll(".triangle").forEach(animate);
+}
+
 const toFloat = input => parseFloat(input.replace(",", "."));
 
 const computeSlope = () => {
