@@ -168,9 +168,16 @@ form {
   border-top: 3px solid;
   padding: 2.25rem;
 }
+#paypal {
+  border: none;
+  padding: 0;
+}
 
 form > * + * {
   margin-top: 2rem;
+}
+#paypal > * + * {
+  margin-top: 0;
 }
 
 .inputs {
