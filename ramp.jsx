@@ -1,26 +1,25 @@
 import { h, Component, render } from "preact";
 import { useState } from "preact/hooks";
 
+const maxLength = slope => {
+  if (8 < slope) return 50;
+  if (5 < slope) return 200;
+  if (4 < slope) return 1000;
+  return Infinity;
+};
+
 const newSection = (slope, length) => {
-  if (8 < slope) {
-    return [
-      { slope, length: Math.min(50, length), height: (slope * 50) / 100 },
-      { slope: 0, length: 140, height: 0 }
-    ];
-  }
-  if (5 < slope) {
-    return [
-      { slope, length: Math.min(200, length), height: (slope * 200) / 100 },
-      { slope: 0, length: 140, height: 0 }
-    ];
-  }
+  const sections = [];
+  length = Math.min(maxLength(slope), length);
+  sections.push({
+    slope,
+    length,
+    height: (slope * length) / 100
+  });
   if (4 < slope) {
-    return [
-      { slope, length: Math.min(1000, length), height: (slope * 1000) / 100 },
-      { slope: 0, length: 140, height: 0 }
-    ];
+    sections.push({ slope: 0, length: 140, height: 0 });
   }
-  return [{ slope, length, height: (slope * length) / 100 }];
+  return sections;
 };
 
 const slopePoints = (sections, L, H) => {
@@ -174,7 +173,14 @@ const App = () => {
                 />
                 <span>&nbsp;%</span>
               </div>
-              <label for="ramp_new-step-length">Longueur</label>
+              <label for="ramp_new-step-length">
+                <div>Longueur</div>
+                {sectionSlope !== null && maxLength(sectionSlope) !== Infinity && (
+                  <div>
+                    <small>(max {maxLength(sectionSlope) / 100}m)</small>
+                  </div>
+                )}
+              </label>
               <div class="nowrap">
                 <input
                   required
