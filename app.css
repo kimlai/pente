@@ -192,6 +192,8 @@ input[type="text"] {
   box-shadow: inset 0.15rem 0.15rem 0 var(--color-light-shadow);
   width: 8ch;
 }
+
+input[inputmode="numeric"],
 input[inputmode="decimal"] {
   text-align: right;
 }
@@ -286,4 +288,26 @@ svg text {
 #slide-stairs-L,
 #slide-stairs-count {
   width: 100%;
+}
+
+#ramp_steps > * + * {
+  margin-top: 1.25rem;
+}
+
+ol.ramp-sections {
+  list-style: revert;
+}
+.ramp-sections > * + * {
+  margin-top: 1rem;
+}
+.btn-link {
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+  font-weight: normal;
+  padding: 0;
+}
+
+.ramp-sections button {
+  margin-left: 1rem;
 }

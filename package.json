@@ -1,0 +1,26 @@
+{
+  "name": "archi-calc",
+  "version": "1.0.0",
+  "description": "Small webpage with tools for architects",
+  "main": "index.html",
+  "dependencies": {
+    "preact": "^10.4.4"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimlai/pente.git"
+  },
+  "author": "kimlai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimlai/pente/issues"
+  },
+  "homepage": "https://github.com/kimlai/pente#readme"
+}
