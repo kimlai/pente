@@ -4,6 +4,7 @@ if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach(entry => {
+        console.log("coucou", entry);
         if (entry.isIntersecting) {
           animate(entry.target);
           observer.unobserve(entry.target);
