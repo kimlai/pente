@@ -306,6 +306,7 @@ ol.ramp-sections {
   text-decoration: underline;
   font-weight: normal;
   padding: 0;
+  font-family: Helvetica, sans-serif;
 }
 
 .ramp-sections button {
