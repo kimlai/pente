@@ -117,93 +117,93 @@ const App = () => {
   return (
     <div class="with-sidebar">
       <div>
-        {!dimensionsSet && (
-          <form id="ramp_form" onSubmit={onSubmitDimensions}>
-            <div class="inputs">
-              <label for="ramp_H">Hauteur H</label>
-              <div class="nowrap">
-                <input
-                  required
-                  id="ramp_H"
-                  name="ramp_H"
-                  inputmode="decimal"
-                  type="text"
-                  pattern="[0-9]*[.,]?[0-9]*"
-                  placeholder="0.00"
-                  value={H}
-                  onInput={e => setH(e.target.value)}
-                />
-                <span>&nbsp;m</span>
-              </div>
-              <label for="ramp_L">Longueur L</label>
-              <div class="nowrap">
-                <input
-                  required
-                  id="ramp_L"
-                  name="ramp_L"
-                  inputmode="decimal"
-                  type="text"
-                  pattern="[0-9]*[.,]?[0-9]*"
-                  placeholder="0.00"
-                  value={L}
-                  onInput={e => setL(e.target.value)}
-                />
-                <span>&nbsp;m</span>
-              </div>
+        <form
+          id="ramp_form"
+          onSubmit={onSubmitDimensions}
+          hidden={dimensionsSet}
+        >
+          <div class="inputs">
+            <label for="ramp_H">Hauteur H</label>
+            <div class="nowrap">
+              <input
+                required
+                id="ramp_H"
+                name="ramp_H"
+                inputmode="decimal"
+                type="text"
+                pattern="[0-9]*[.,]?[0-9]*"
+                placeholder="0.00"
+                value={H}
+                onInput={e => setH(e.target.value)}
+              />
+              <span>&nbsp;m</span>
             </div>
-            <button type="submit">Valider</button>
-          </form>
-        )}
-        {dimensionsSet && (
-          <form id="ramp_steps" onSubmit={addSection}>
-            <h3>Nouvelle rampe</h3>
-            <div class="inputs">
-              <label for="ramp_new-step-slope">Pente</label>
-              <div class="nowrap">
-                <input
-                  required
-                  id="ramp_new-step-slope"
-                  name="ramp_new-step-slope"
-                  inputmode="decimal"
-                  type="text"
-                  pattern="[0-9]*[.,]?[0-9]*"
-                  placeholder="0.00"
-                  value={sectionSlope}
-                  onInput={e => setSectionSlope(e.target.value)}
-                />
-                <span>&nbsp;%</span>
-              </div>
-              <label for="ramp_new-step-length">
-                <div>Longueur</div>
-                {sectionSlope !== null && maxLength(sectionSlope) !== Infinity && (
-                  <div>
-                    <small>(max {maxLength(sectionSlope) / 100}m)</small>
-                  </div>
-                )}
-              </label>
-              <div class="nowrap">
-                <input
-                  required
-                  id="ramp_new-step-length"
-                  name="ramp_new-step-length"
-                  inputmode="decimal"
-                  type="text"
-                  pattern="[0-9]*[.,]?[0-9]*"
-                  placeholder="0.00"
-                  value={sectionLength}
-                  onInput={e => setSectionLength(e.target.value)}
-                />
-                <span>&nbsp;m</span>
-              </div>
+            <label for="ramp_L">Longueur L</label>
+            <div class="nowrap">
+              <input
+                required
+                id="ramp_L"
+                name="ramp_L"
+                inputmode="decimal"
+                type="text"
+                pattern="[0-9]*[.,]?[0-9]*"
+                placeholder="0.00"
+                value={L}
+                onInput={e => setL(e.target.value)}
+              />
+              <span>&nbsp;m</span>
             </div>
-            <button type="submit">Ajouter</button>
-            <div>
-              <button onClick={reset} class="btn-link">
-                Recommencer
-              </button>
+          </div>
+          <button type="submit">Valider</button>
+        </form>
+        <form id="ramp_steps" onSubmit={addSection} hidden={!dimensionsSet}>
+          <h3>Nouvelle rampe</h3>
+          <div class="inputs">
+            <label for="ramp_new-step-slope">Pente</label>
+            <div class="nowrap">
+              <input
+                required
+                id="ramp_new-step-slope"
+                name="ramp_new-step-slope"
+                inputmode="decimal"
+                type="text"
+                pattern="[0-9]*[.,]?[0-9]*"
+                placeholder="0.00"
+                value={sectionSlope}
+                onInput={e => setSectionSlope(e.target.value)}
+              />
+              <span>&nbsp;%</span>
             </div>
-          </form>
-        )}
+            <label for="ramp_new-step-length">
+              <div>Longueur</div>
+              {sectionSlope !== null && maxLength(sectionSlope) !== Infinity && (
+                <div>
+                  <small>(max {maxLength(sectionSlope) / 100}m)</small>
+                </div>
+              )}
+            </label>
+            <div class="nowrap">
+              <input
+                required
+                id="ramp_new-step-length"
+                name="ramp_new-step-length"
+                inputmode="decimal"
+                type="text"
+                pattern="[0-9]*[.,]?[0-9]*"
+                placeholder="0.00"
+                value={sectionLength}
+                onInput={e => setSectionLength(e.target.value)}
+              />
+              <span>&nbsp;m</span>
+            </div>
+          </div>
+          <button type="submit">Ajouter</button>
+          <div>
+            <button onClick={reset} class="btn-link">
+              Recommencer
+            </button>
+          </div>
+        </form>
         <section class="triangle">
           <svg
             id="ramp-svg"
