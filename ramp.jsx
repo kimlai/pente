@@ -22,6 +22,16 @@ const newSection = (slope, length) => {
   return sections;
 };
 
+const lastSection = (sections, H_inCm, L_inCm) => {
+  const totalLength = propSum(sections, "length");
+  const totalHeight = propSum(sections, "height");
+  return {
+    length: L_inCm - totalLength,
+    height: H_inCm - totalHeight,
+    slope: (((H_inCm - totalHeight) * 100) / (L_inCm - totalLength)).toFixed(2)
+  };
+};
+
 const slopePoints = (sections, L, H) => {
   let x = 0;
   let y = H;
@@ -52,10 +62,11 @@ const toSvg = (sections, L, H) => {
     const topRightY = Math.round((80 * (y - section.height)) / H) + 10;
 
     const polygon = (
-      <polygon
+      <polyline
+        class={section.temporary ? "temporary" : ""}
         fill="none"
         stroke="currentColor"
-        points={`${topLeftX},${topLeftY} ${topRightX},${topRightY} ${topRightX},90 ${topLeftX},90`}
+        points={`${topLeftX},90 ${topLeftX},${topLeftY} ${topRightX},${topRightY}`}
       />
     );
 
@@ -98,21 +109,21 @@ const App = () => {
     setDimensionsSet(false);
   };
 
-  const totalLength = propSum(sections, "length");
-  const totalHeight = propSum(sections, "height");
-
   const H_inCm = H * 100;
   const L_inCm = L * 100;
 
-  const allSections = sections.concat([
-    {
-      length: L_inCm - totalLength,
-      height: H_inCm - totalHeight,
-      slope: (((H_inCm - totalHeight) * 100) / (L_inCm - totalLength)).toFixed(
-        2
+  let allSections = sections;
+  if (sectionSlope !== null && sectionLength !== null) {
+    allSections = allSections.concat(
+      newSection(sectionSlope, sectionLength * 100).map(section =>
+        Object.assign(section, { temporary: true })
       )
-    }
-  ]);
+    );
+  }
+  allSections = allSections.concat([lastSection(allSections, H_inCm, L_inCm)]);
+  if (sectionSlope !== null && sectionLength !== null) {
+    allSections[allSections.length - 1].temporary = true;
+  }
 
   return (
     <div class="with-sidebar">
@@ -197,7 +208,7 @@ const App = () => {
               <span>&nbsp;m</span>
             </div>
           </div>
-          <button type="submit">Ajouter</button>
+          <button type="submit">Valider</button>
           <div>
             <button onClick={reset} class="btn-link">
               Recommencer
@@ -250,7 +261,7 @@ const App = () => {
                         Palier <b>{section.length / 100}m</b>
                       </span>
                     )}
-                    {i < allSections.length - 1 && (
+                    {i < allSections.length - 1 && !section.temporary && (
                       <button
                         class="btn-link"
                         onClick={() =>

@@ -239,6 +239,10 @@ svg text {
   fill: currentColor;
 }
 
+.temporary {
+  stroke-dasharray: 3 1.5;
+}
+
 .animated-shape {
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
