@@ -123,7 +123,7 @@ const App = () => {
           hidden={dimensionsSet}
         >
           <div class="inputs">
-            <label for="ramp_H">Hauteur H</label>
+            <label for="ramp_H">Hauteur totale</label>
             <div class="nowrap">
               <input
                 required
@@ -138,7 +138,7 @@ const App = () => {
               />
               <span>&nbsp;m</span>
             </div>
-            <label for="ramp_L">Longueur L</label>
+            <label for="ramp_L">Longueur totale</label>
             <div class="nowrap">
               <input
                 required
@@ -154,7 +154,7 @@ const App = () => {
               <span>&nbsp;m</span>
             </div>
           </div>
-          <button type="submit">Valider</button>
+          <button type="submit">Continuer</button>
         </form>
         <form id="ramp_steps" onSubmit={addSection} hidden={!dimensionsSet}>
           <h3>Nouvelle rampe</h3>
