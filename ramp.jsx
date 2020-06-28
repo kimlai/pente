@@ -113,7 +113,7 @@ const App = () => {
   const L_inCm = L * 100;
 
   let allSections = sections;
-  if (sectionSlope !== null && sectionLength !== null) {
+  if (sectionSlope && sectionLength) {
     allSections = allSections.concat(
       newSection(sectionSlope, sectionLength * 100).map(section =>
         Object.assign(section, { temporary: true })
@@ -121,7 +121,7 @@ const App = () => {
     );
   }
   allSections = allSections.concat([lastSection(allSections, H_inCm, L_inCm)]);
-  if (sectionSlope !== null && sectionLength !== null) {
+  if (sectionSlope && sectionLength) {
     allSections[allSections.length - 1].temporary = true;
   }
 
