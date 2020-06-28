@@ -169,8 +169,12 @@ form {
   padding: 2.25rem;
 }
 #paypal {
+  display: inline;
   border: none;
   padding: 0;
+}
+#paypal button {
+  font-weight: bold;
 }
 
 form > * + * {
