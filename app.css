@@ -309,6 +309,33 @@ svg text {
   margin-top: 1.25rem;
 }
 
+.loading-message {
+  padding: 2.25rem;
+  border-top: 3px solid var(--color-dark);
+}
+/* stolen from https://codepen.io/vkjgr/pen/gbPaVx */
+.loading-message:after {
+  content: ".";
+  animation: dots 2s infinite;
+}
+
+@keyframes dots {
+  0% {
+    color: var(--color-dark);
+    text-shadow: 0.25em 0 0 var(--color-light), 0.5em 0 0 var(--color-light);
+  }
+  30% {
+    color: var(--color-dark);
+    text-shadow: 0.25em 0 0 var(--color-light), 0.5em 0 0 var(--color-light);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 var(--color-dark), 0.5em 0 0 var(--color-light);
+  }
+  100% {
+    text-shadow: 0.25em 0 0 var(--color-dark), 0.5em 0 0 var(--color-dark);
+  }
+}
+
 ol.ramp-sections {
   list-style: revert;
 }

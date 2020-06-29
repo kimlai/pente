@@ -284,4 +284,5 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById("ramp-app"));
+const container = document.getElementById("ramp-app");
+render(<App />, container, container.querySelector(".loading-message"));
